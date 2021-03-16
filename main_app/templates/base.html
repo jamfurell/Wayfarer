@@ -24,13 +24,13 @@
             <div class="nav-right"> 
                 <ul class="nav-links">
                     <li><a href="/"> About Us </a></li>
-                {% comment %} {% if user.is authenticated %} {% endcomment %}
+                {% if user.is_authenticated %}
                     <li><a href="/profile"> View Profile</a></li>
-                    {% comment %} <li><a href="/"> Log Out</a></li> {% endcomment %}
-                {% comment %} {% else %} {% endcomment %}
+                    <li><a href="{% url 'logout' %}"> Log Out</a></li>
+                {% else %}
                     <li><a href={% url 'signup' %}> Sign Up</a></li>
                     <li><a href={% url 'login' %}> Log In</a></li>
-                {% comment %} {% endif %} {% endcomment %}
+                {% endif %}
                 </ul>
             </div>
 
