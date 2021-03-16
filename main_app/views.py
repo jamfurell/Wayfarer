@@ -21,7 +21,8 @@ def about_us(request):
 @login_required
 def profile(request):
     cities= City.objects.all()
-    return render(request, 'profile/profile.html', {'cities': cities})
+    profile = Profile.objects.filter(user=request.user)
+    return render(request, 'profile/profile.html', {'cities': cities, 'profile': profile})
 
 def signup(request):
     error_message= ''
