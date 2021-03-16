@@ -30,6 +30,10 @@ def signup(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             user= form.save()
+            # load the profile instance created by the signal
+            user.refresh_from_db()  
+            user.profile.current_city = form.cleaned_data.get('current_city')
+            user.save()
             login(request,user)
             return redirect('profile')
         else: 
