@@ -1,5 +1,9 @@
 .env/
 */__pycache__/
 */*/__pycache__/
+<<<<<<< HEAD
+=======
+__pycache__/
+>>>>>>> 9c3ad0e8cd2b5de653c329e15448a8e76f452388
 db.salite3
 venv/
