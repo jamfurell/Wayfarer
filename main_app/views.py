@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 # Add the following import
 from .forms import SignUpForm
@@ -17,6 +18,7 @@ def home(request):
 def about_us(request):
     return HttpResponse('<h1>This is About Us!</h1>')
 
+@login_required
 def profile(request):
     cities= City.objects.all()
     return render(request, 'profile/profile.html', {'cities': cities})
@@ -29,7 +31,7 @@ def signup(request):
         if form.is_valid():
             user= form.save()
             login(request,user)
-            return redirect('index')
+            return redirect('profile')
         else: 
             print(form.errors.as_json())
             error_message = 'Invalid sign up - try again'
