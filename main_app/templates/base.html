@@ -5,11 +5,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/style.css/' %}">
     <title>Wayfarer</title>
 </head>
 
 <body>
+    <header class="navbar">
+        <div class="nav">
 
+            <div class="nav-left">
+                <div class="brand-logo"> 
+                    <a href= "/">
+                    
+                    <img src="https://thumbs.dreamstime.com/b/sunset-icon-linear-179583112.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="nav-right"> 
+                <ul class="nav-links">
+                    <li><a href="/"> About Us </a></li>
+                {% comment %} {% if user.is authenticated %} {% endcomment %}
+                    <li><a href="/profile"> View Profile</a></li>
+                    {% comment %} <li><a href="/"> Log Out</a></li> {% endcomment %}
+                {% comment %} {% else %} {% endcomment %}
+                    <li><a href={% url 'signup' %}> Sign Up</a></li>
+                    <li><a href={% url 'login' %}> Log In</a></li>
+                {% comment %} {% endif %} {% endcomment %}
+                </ul>
+            </div>
+
+        </div>
+    </header> 
     <main class="container">
         {% block content %}
         {% endblock %}
