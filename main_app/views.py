@@ -29,7 +29,7 @@ def profile(request):
         "profile": profile,
     }
     return render(request, 'profile/profile.html', profile_content)
-
+    
 def signup(request):
     error_message= ''
     if request.method == 'POST': 
