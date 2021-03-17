@@ -15,6 +15,62 @@
 .my-post{
     text-align: center;
 }
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 1.4fr 1fr 1.4fr 1fr 1.4fr 1fr 0.6fr;
+    grid-template-rows: 0.3fr 0.7fr 1fr 1fr 1fr 1.4fr 0.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ". . . . . . . . ."
+        ". my-cities my-cities city city city city city ."
+        ". my-cities my-cities city city city city city ."
+        ". my-cities my-cities review review review review review ."
+        ". my-cities my-cities review review review review review ."
+        ". my-cities my-cities review review review review review ."
+        ". . . . . . . . .";
+}
+.my-cities {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.2fr 1.8fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "my-cities-title my-cities-title"
+        "my-cities-list my-cities-list";
+    grid-area: my-cities;
+}
+.my-cities-title { grid-area: my-cities-title; }
+.my-cities-list { grid-area: my-cities-list; }
+.city {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr 1.6fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ". city-name city-pic city-pic city-pic"
+        ". . city-pic city-pic city-pic";
+    grid-area: city;
+}
+.city-ame { grid-area: city-ame; }
+.city-pic { grid-area: city-pic; }
+.review {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 0.9fr;
+    grid-template-rows: 0.4fr 1.6fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "review-title review-title review-btn"
+        "review-list review-list review-list"
+        "review-list review-list review-list"
+        "review-list review-list review-list";
+    grid-area: review;
+}
+.review-title { grid-area: review-title; }
+.review-btn { grid-area: review-btn; }
+.review-list { grid-area: review-list; }
+
 /* 
 .nav{
     display: flex;
@@ -66,7 +122,6 @@
 }
 
 /* SLIDSHOW */
-
 .mySlides {
 	display: none;
 	height: 100%;

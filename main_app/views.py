@@ -24,7 +24,7 @@ def profile(request):
     profile = Profile.objects.get(user=request.user)
     # print(profile.current_city, "----------------------------------------------------------------------------------")
     reviews = profile.review_set.all()
-    print(profile.user.date_joined, "<===================")
+    # print(profile.user.date_joined, "<===================")
     #### NEED TO ADDRESS IF THEY DONT HAVE ANY
     # print(reviews[0].description)
     # cities= City.objects.all()
