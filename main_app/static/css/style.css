@@ -1,0 +1,165 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.content{
+    margin: 20px auto;
+}
+.navbar{
+    background-color: rgb(144, 94, 226);
+}
+.nav-link{
+    color: antiquewhite;
+}
+.my-post{
+    text-align: center;
+}
+/* 
+.nav{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 35px;
+    background-color: rgb(96, 173, 245);
+}
+.nav-left{
+    width: 20%; 
+    height: 100%;
+    overflow: hidden;
+}
+.brand-logo{
+    width: 100%;
+    height: 100%;
+
+}
+.brand-logo img{
+
+    object-fit: cover;
+}
+.nav-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center; 
+    width: 80%;
+    height: 100%;
+} 
+.nav-links li{
+    color:white;
+    display: inline-block;
+    padding-right: 5px;
+}
+.container{
+    margin: 1rem auto;
+    width: 90%;
+}
+.homepage{
+    text-align: center;
+}
+.homepage-images{
+    overflow: hidden;
+}
+.homepage-images img {
+    height: 160px;
+    object-fit: cover;
+}
+
+/* SLIDSHOW */
+
+.mySlides {
+	display: none;
+	height: 100%;
+	font-family: Arial,Helvetica,sans-serif;
+}
+.mySlides img {
+	width: 100%;
+	height: 100%;
+}
+.slideshow-container {
+	overflow: hidden;
+	position: relative;
+	margin: auto;
+	width: 500px;
+	height: 200px;
+}
+.slide-prev, .slide-next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+}
+.slide-next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+.slide-prev:hover, .slide-next:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+.slide-text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+	text-shadow: 0px 0px 2px #000;
+}
+.slide-dot-control {
+	text-align: center;
+	margin-top: 10px;
+}
+.slide-dot {
+	cursor:pointer;
+	height: 13px;
+	width: 13px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+.slide-dot-active, .slide-dot:hover {
+	background-color: #717171;
+}
+
+/************CSS Animation***********/
+
+.animated { 
+    -webkit-animation-name: fadeInLeft; 
+            animation-name: fadeInLeft; 
+    -webkit-animation-duration: 1s; 
+            animation-duration: 1s; 
+} 
+@-webkit-keyframes fadeInLeft { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateX(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateX(0); 
+    } 
+} 
+@keyframes fadeInLeft { 
+    0% { 
+        opacity: 0; 
+        transform: translateX(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateX(0); 
+    } 
+} 
+.fadeInLeft { 
+    -webkit-animation-name: fadeInLeft; 
+    animation-name: fadeInLeft; 
+} */
