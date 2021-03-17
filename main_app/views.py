@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 # Add the following import
 from .forms import SignUpForm, EditProfileForm
 from .models import Profile, City, Review
+from django.db.models import Q
 
 
 
@@ -47,7 +48,9 @@ def show_review(request, review_id):
 
 def search_results(request):
     query = request.GET['q']
-    cities = City.objects.filter(name__icontains=query) # new
+    cities = City.objects.filter(
+        Q(name__icontains=query) | Q(country__icontains=query)
+    ) # new
     # print(cities, "------------------------------------------")
     return render(request, 'search_results.html', {'cities': cities})
 
