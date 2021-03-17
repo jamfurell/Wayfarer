@@ -13,8 +13,9 @@ class Profile(models.Model):
     current_city= models.CharField(max_length=100)
     profile_pic= models.CharField(max_length=300, null=True )
     total_reviews= models.IntegerField(null=True) 
-    # def set_date(self):
-    #     return self.user.date_joined
+    def set_date(self):
+        
+        return self.user
     
     user = models.OneToOneField(User, on_delete=models.CASCADE, null =True,)
     def __str__ (self):

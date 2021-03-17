@@ -5,7 +5,8 @@
 
 <p>Welcome to {{ profile.current_city }}, {{ profile.name }}</p>
 <p>Username: {{ profile.user.username }}</p>
-
+<p>Date Joined: {% if profile.set_date %}</p>
+{% endif %}
 <a href="{% url 'edit_profile' %}">Edit Profile</a>
 <br />
 {% for review in reviews %}
