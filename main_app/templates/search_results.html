@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Search Results</h1>
+<ul>
+    {% for city in cities %}
+      <li>
+        <a href="{% url 'show_city' city.id %}">{{ city.name }}</a>
+      </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
