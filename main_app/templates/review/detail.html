@@ -1,6 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>{{review.title}}</h1>
-{{ review.description }}
+
+{% comment %} <div class="card">
+    <div class="card-body">
+        <h1>{{review.title}}</h1>
+    </div>
+</div>
+<div class="content">
+    {{ review.description }}
+    <img src="">
+</div> {% endcomment %}
+
+<div class="text-center content">
+    <div class="city-image">
+        
+        <img src="{{ review.city.city_pic }}" class="rounded" alt="{{review.title}}">
+    </div>
+    <div >
+        <h5 >{{review.title}}</h5>
+        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
 
 {% endblock %}

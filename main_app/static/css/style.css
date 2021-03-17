@@ -3,8 +3,19 @@
     margin: 0;
     padding: 0;
 }
-
-
+.content{
+    margin: 20px auto;
+}
+.navbar{
+    background-color: rgb(144, 94, 226);
+}
+.nav-link{
+    color: antiquewhite;
+}
+.my-post{
+    text-align: center;
+}
+/* 
 .nav{
     display: flex;
     flex-direction: row;
@@ -123,10 +134,10 @@
 /************CSS Animation***********/
 
 .animated { 
-   -webkit-animation-name: fadeInLeft; 
-           animation-name: fadeInLeft; 
-   -webkit-animation-duration: 1s; 
-           animation-duration: 1s; 
+    -webkit-animation-name: fadeInLeft; 
+            animation-name: fadeInLeft; 
+    -webkit-animation-duration: 1s; 
+            animation-duration: 1s; 
 } 
 @-webkit-keyframes fadeInLeft { 
     0% { 
@@ -151,4 +162,4 @@
 .fadeInLeft { 
     -webkit-animation-name: fadeInLeft; 
     animation-name: fadeInLeft; 
-}
+} */

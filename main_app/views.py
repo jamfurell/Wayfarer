@@ -23,7 +23,9 @@ def profile(request):
     profile = Profile.objects.get(user=request.user)
     print(profile.current_city, "----------------------------------------------------------------------------------")
     reviews = profile.review_set.all()
-    print(reviews[0].description)
+
+    #### NEED TO ADDRESS IF THEY DONT HAVE ANY
+    # print(reviews[0].description)
     # cities= City.objects.all()
     return render(request, 'profile/profile.html', {'profile': profile, 'reviews': reviews})
 
