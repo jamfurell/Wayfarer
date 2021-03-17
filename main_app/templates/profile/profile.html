@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<<<<<<< HEAD
 <h1> User Profile: </h1>
 <h1>The current city I live in is: {{user.join_date}}</h1>
 {% for city in cities %}
@@ -10,9 +11,29 @@
         <div> 
             <img src=" {{ city.city_pic}}">
         </div>
+=======
+<h1>City List</h1>
+
+<p>Welcome to {{ profile.current_city }}, {{ profile.name }}</p>
+<p>Username: {{ profile.user.username }}</p>
+<p>Date Joined: {% if profile.set_date %}</p>
+{% endif %}
+<a href="{% url 'edit_profile' %}">Edit Profile</a>
+<br />
+{% for review in reviews %}
+    <a href="{% url 'show_review' review.id %}">{{ review.title }}</a>
+    {% comment %} <p>{{ review.description }} </p> {% endcomment %}
+{% endfor %}
+
+{% comment %} {% for city in cities %}
+    <div class="city-list">
+    <h5> City Info </h5>
+    <hr>
+    <p>{{ profile }}</p>
+>>>>>>> submain
         <p>Name: {{ city.name }}</p>
         <p>Country: {{ city.country }}</p>
     </div>
-{% endfor %}
+{% endfor %} {% endcomment %}
 
 {% endblock  %}
