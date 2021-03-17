@@ -24,3 +24,4 @@ function currentSlide(n) {
 	showSlides();
 }
 window.onload = showSlides;
+
