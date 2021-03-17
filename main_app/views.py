@@ -46,7 +46,8 @@ def show_review(request, review_id):
     return render(request, 'review/detail.html', {'review': review})
 
 def search_results(request):
-    cities = City.objects.filter(name__icontains='Denver') # new
+    query = request.GET['q']
+    cities = City.objects.filter(name__icontains=query) # new
     # print(cities, "------------------------------------------")
     return render(request, 'search_results.html', {'cities': cities})
 
