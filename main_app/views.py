@@ -20,9 +20,15 @@ def about_us(request):
 
 @login_required
 def profile(request):
-    cities= City.objects.all()
+    # cities= City.objects.filter(user=request.user)
+    # print (f"this is profile ======>{request}")
     profile = Profile.objects.filter(user=request.user)
-    return render(request, 'profile/profile.html', {'cities': cities, 'profile': profile})
+    # print(f"this is the profile object filter =====> {profile}")
+    profile_content = {
+        # "cities": cities,
+        "profile": profile,
+    }
+    return render(request, 'profile/profile.html', profile_content)
 
 def signup(request):
     error_message= ''
