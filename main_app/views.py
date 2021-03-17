@@ -18,16 +18,21 @@ def home(request):
 def about_us(request):
     return HttpResponse('<h1>This is About Us!</h1>')
 
+# [user: username,emailaddress, datejoined]
 @login_required
 def profile(request):
     profile = Profile.objects.get(user=request.user)
-    print(profile.current_city, "----------------------------------------------------------------------------------")
+    # print(profile.current_city, "----------------------------------------------------------------------------------")
     reviews = profile.review_set.all()
-
+    print(profile.user.date_joined, "<===================")
     #### NEED TO ADDRESS IF THEY DONT HAVE ANY
     # print(reviews[0].description)
     # cities= City.objects.all()
-    return render(request, 'profile/profile.html', {'profile': profile, 'reviews': reviews})
+    profile_content={
+        'profile': profile,
+        'reviews': reviews,
+    }
+    return render(request, 'profile/profile.html', profile_content)
 
 @login_required
 def edit_profile(request):
