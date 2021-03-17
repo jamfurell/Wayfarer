@@ -54,6 +54,10 @@ def search_results(request):
     # print(cities, "------------------------------------------")
     return render(request, 'search_results.html', {'cities': cities})
 
+def show_city(request, city_id):
+    city = City.objects.get(id=city_id)
+    return render (request, 'city/city_detail.html', {'city': city})
+
 def signup(request):
     error_message= ''
     if request.method == 'POST': 

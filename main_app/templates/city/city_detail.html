@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<img width="600" src="" onerror="this.src='{% static '/images/default_city.jpg' %}';">
+<h1>{{ city.name }}</h1>
+<h4>{{ city.country }}</h2>
+
+{% endblock %}
