@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+.navbar{
+    background-color: rgb(144, 94, 226);
+}
+.nav-link{
+    color: antiquewhite;
+}
 /* 
 .nav{
     display: flex;

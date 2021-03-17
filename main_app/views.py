@@ -27,7 +27,7 @@ def profile(request):
     #### NEED TO ADDRESS IF THEY DONT HAVE ANY
     # print(reviews[0].description)
     # cities= City.objects.all()
-    return render(request, 'profile/profile.html', {'profile': profile, 'reviews': reviews, 'user':Userprofile})
+    return render(request, 'profile/profile.html', {'profile': profile, 'reviews': reviews})
 
 @login_required
 def edit_profile(request):

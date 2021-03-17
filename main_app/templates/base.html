@@ -38,10 +38,10 @@
 
         </div>
     </header>  {% endcomment %}
-    <nav class="navbar sticky-top navbar-inverse navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-        <img src="/WF-brand" width="150" height="60" alt="">
+        <img src="*/*/static/images/WF-brand" width="150" height="60" alt="">
         </a>
         <ul class="nav">
             <li class="nav-item nav-pills nav-fill">
@@ -71,6 +71,9 @@
         {% block content %}
         {% endblock %}
     </main>
+{% comment %} Bootstrap JS  {% endcomment %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 <script src="{% static 'js/main.js/' %}"></script>
+
 </body>
 </html>
