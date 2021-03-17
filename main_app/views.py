@@ -5,7 +5,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 # Add the following import
-from .forms import SignUpForm
+from .forms import SignUpForm, EditProfileForm
 from .models import Profile, City, Review
 
 
@@ -20,9 +20,28 @@ def about_us(request):
 
 @login_required
 def profile(request):
-    cities= City.objects.all()
-    profile = Profile.objects.filter(user=request.user)
-    return render(request, 'profile/profile.html', {'cities': cities, 'profile': profile})
+    profile = Profile.objects.get(user=request.user)
+    print(profile.current_city, "----------------------------------------------------------------------------------")
+    reviews = profile.review_set.all()
+    print(reviews[0].description)
+    # cities= City.objects.all()
+    return render(request, 'profile/profile.html', {'profile': profile, 'reviews': reviews})
+
+@login_required
+def edit_profile(request):
+    profile = Profile.objects.get(user=request.user)
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance = profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = EditProfileForm(instance = profile)
+        return render(request, 'profile/edit_profile.html', {'form' : form})
+
+def show_review(request, review_id):
+    review = Review.objects.get(id=review_id)
+    return render(request, 'review/detail.html', {'review': review})
 
 def signup(request):
     error_message= ''
