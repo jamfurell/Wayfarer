@@ -4,7 +4,7 @@
     padding: 0;
 }
 
-
+/* 
 .nav{
     display: flex;
     flex-direction: row;
@@ -123,10 +123,10 @@
 /************CSS Animation***********/
 
 .animated { 
-   -webkit-animation-name: fadeInLeft; 
-           animation-name: fadeInLeft; 
-   -webkit-animation-duration: 1s; 
-           animation-duration: 1s; 
+    -webkit-animation-name: fadeInLeft; 
+            animation-name: fadeInLeft; 
+    -webkit-animation-duration: 1s; 
+            animation-duration: 1s; 
 } 
 @-webkit-keyframes fadeInLeft { 
     0% { 
@@ -151,4 +151,4 @@
 .fadeInLeft { 
     -webkit-animation-name: fadeInLeft; 
     animation-name: fadeInLeft; 
-}
+} */

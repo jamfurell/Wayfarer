@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header class="navbar">
+    {% comment %} <header class="navbar">
         <div class="nav">
 
             <div class="nav-left">
@@ -37,7 +37,36 @@
             </div>
 
         </div>
-    </header> 
+    </header>  {% endcomment %}
+    <nav class="navbar sticky-top navbar-inverse navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+        <img src="/WF-brand" width="150" height="60" alt="">
+        </a>
+        <ul class="nav">
+            <li class="nav-item nav-pills nav-fill">
+                <a class="nav-link" href="/"> About Us </a>
+            </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item nav-pills nav-fill">
+                    <a class="nav-link" href="/profile"> View Profile</a>
+                </li>
+                <li class="nav-item nav-pills nav-fill">
+                    <a class="nav-link" href="{% url 'logout' %}"> Log Out</a>
+                </li>
+                {% else %}
+                <li class="nav-item nav-pills nav-fill">
+                    <a class="nav-link" href={% url 'signup' %}> Sign Up</a>
+                </li>
+                <li class="nav-item nav-pills nav-fill">
+                    <a class="nav-link" href={% url 'login' %}> Log In</a>
+                </li>
+                {% endif %}
+
+        </ul>
+    </div>
+    </nav>
+
     <main class="container">
         {% block content %}
         {% endblock %}

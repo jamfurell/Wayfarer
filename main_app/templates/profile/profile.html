@@ -1,17 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<<<<<<< HEAD
-<h1> User Profile: </h1>
-<h1>The current city I live in is: {{user.join_date}}</h1>
-{% for city in cities %}
-    <div class="city-list">
-    <h5> City Info </h5>
-    <hr>
-        <div> 
-            <img src=" {{ city.city_pic}}">
-        </div>
-=======
 <h1>City List</h1>
 
 <p>Welcome to {{ profile.current_city }}, {{ profile.name }}</p>
@@ -30,7 +19,6 @@
     <h5> City Info </h5>
     <hr>
     <p>{{ profile }}</p>
->>>>>>> submain
         <p>Name: {{ city.name }}</p>
         <p>Country: {{ city.country }}</p>
     </div>
