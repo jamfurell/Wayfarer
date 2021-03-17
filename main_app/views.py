@@ -21,9 +21,9 @@ def about_us(request):
 @login_required
 def profile(request):
     profile = Profile.objects.get(user=request.user)
-    print(profile.current_city, "----------------------------------------------------------------------------------")
+    # print(profile.current_city, "----------------------------------------------------------------------------------")
     reviews = profile.review_set.all()
-    print(reviews[0].description)
+    # print(reviews[0].description)
     # cities= City.objects.all()
     return render(request, 'profile/profile.html', {'profile': profile, 'reviews': reviews})
 
@@ -42,6 +42,11 @@ def edit_profile(request):
 def show_review(request, review_id):
     review = Review.objects.get(id=review_id)
     return render(request, 'review/detail.html', {'review': review})
+
+def search_results(request):
+    cities = City.objects.filter(name__icontains='Denver') # new
+    # print(cities, "------------------------------------------")
+    return render(request, 'search_results.html', {'cities': cities})
 
 def signup(request):
     error_message= ''
