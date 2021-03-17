@@ -3,12 +3,17 @@
     margin: 0;
     padding: 0;
 }
-
+.content{
+    margin: 20px auto;
+}
 .navbar{
     background-color: rgb(144, 94, 226);
 }
 .nav-link{
     color: antiquewhite;
+}
+.my-post{
+    text-align: center;
 }
 /* 
 .nav{
