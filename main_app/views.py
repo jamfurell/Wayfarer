@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 # Add the following import
 from .forms import SignUpForm, EditProfileForm
 from .models import Profile, City, Review
+from django.db.models import Q
 
 
 
@@ -21,7 +22,7 @@ def about_us(request):
 @login_required
 def profile(request):
     profile = Profile.objects.get(user=request.user)
-    print(profile.current_city, "----------------------------------------------------------------------------------")
+    # print(profile.current_city, "----------------------------------------------------------------------------------")
     reviews = profile.review_set.all()
 
     #### NEED TO ADDRESS IF THEY DONT HAVE ANY
@@ -44,6 +45,14 @@ def edit_profile(request):
 def show_review(request, review_id):
     review = Review.objects.get(id=review_id)
     return render(request, 'review/detail.html', {'review': review})
+
+def search_results(request):
+    query = request.GET['q']
+    cities = City.objects.filter(
+        Q(name__icontains=query) | Q(country__icontains=query)
+    ) # new
+    # print(cities, "------------------------------------------")
+    return render(request, 'search_results.html', {'cities': cities})
 
 def signup(request):
     error_message= ''
