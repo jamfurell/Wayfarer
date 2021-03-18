@@ -3,8 +3,50 @@
 {% load static %}
 {% block content %}
 
-<img width="600" src="" onerror="this.src='{% static '/images/default_city.jpg' %}';">
+{% comment %} <img width="600" src="" onerror="this.src='{% static '/images/default_city.jpg' %}';">
 <h1>{{ city.name }}</h1>
-<h4>{{ city.country }}</h2>
+<h4>{{ city.country }}</h2> {% endcomment %}
+
+
+
+<div class="grid-container">
+    <div class="my-cities">
+        <div class="my-cities-title">
+            <h4>My list of Cities</h4>
+        </div>
+        <div class="my-cities-list">
+            <ul>
+                <li>list city #1</li>
+                <li>list city #2</li>
+            </ul>
+        </div>
+    </div>
+    <div class="city">
+        <div class="city-name">
+            <h3>{{city.name}}</h3>
+            <h5> country name goes here </h5>
+        </div>
+        <div class="city-pic">
+            {% if city.city_pic %}
+                <img src="{{ city.city_pic }}" class="rounded" alt="{{city.name}}">
+            {% else %}
+                <img width="600" src="" onerror="this.src='{% static '/images/default_city.jpg' %}';">
+            {% endif %}
+        </div>
+    </div>
+    <div class="review">
+        <div class="review-title">
+            <h5> Reviews for {{city.name}}
+        </div>
+        <div class="review-btn">
+            <input type="submit" class="btn btn-success" value="Add Review">
+        </div>
+        <div class="review-list">
+            {% comment %} <h5 >{{review.title}}</h5> {% endcomment %}
+            <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}
