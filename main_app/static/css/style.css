@@ -37,9 +37,9 @@ a:hover {
 }
 .my-cities {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 0.1fr 1.8fr;
-    gap: 0px 0px;
+    gap: 0px;
     grid-template-areas:
         "my-cities-title my-cities-title"
         "my-cities-list my-cities-list";
