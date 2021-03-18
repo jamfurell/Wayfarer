@@ -75,6 +75,7 @@ def show_city(request, city_id):
     city_reviews=city.review_set.all()
     print(type(city_reviews), "<===========this is all the reviews for tht city")
     show_city_content={
+        'profile': profile,
         'city': city,
         'my_reviews': my_reviews,
         'city_reviews': city_reviews,

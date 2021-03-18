@@ -5,7 +5,7 @@
 
 <h1>Welcome {{ profile.user.username }}</h1>
 {% comment %} <h4>Username: {{ profile.user.username }}</h4> {% endcomment %}
-<p> Current City {{ profile.current_city }}</p>
+<p> Current City: {{ profile.current_city }}</p>
     <p>Date Joined: {{profile.user.date_joined}}</p>
     {% comment %} <p>{{user.username}} This is the user.username </p>
     <p>{{profile.user}} This is the profile.username</p> {% endcomment %}
@@ -15,7 +15,7 @@
 
 <br />
 
-<div class="row">
+<div class="row text-center">
      {% for review in reviews %}
     <div class="col-sm-6">
         
@@ -25,7 +25,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ review.title }}</h5>
                         {% comment %} <p class="card-text"></p> {% endcomment %}
-                        <a href="{% url 'show_review' review.id %}" class="btn btn-primary">See My Review</a>
+                        <a href="{% url 'show_review' review.id %}" class="btn btn-outline-primary">See My Review</a>
                     </div>
                 </div>
 

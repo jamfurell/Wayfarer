@@ -9,11 +9,12 @@
 .navbar{
     background-color: rgb(144, 94, 226);
 }
-.navbar-brand{
-    color: white!important;
+
+.navbar-brand, .nav-link{
+    color: antiquewhite!important;
 }
-.nav-link{
-    color: antiquewhite;
+a:hover {
+    color: black;
 }
 /* .my-post{
     text-align: center;
@@ -72,10 +73,10 @@
     grid-area: city-pic;
     overflow: hidden;
 }
-.city-pic img{
+/* .city-pic img{
     height: 180px;
     object-fit: cover;
-}
+} */
 .review {
     display: grid;
     grid-template-columns: 1fr 1.1fr 0.9fr;
