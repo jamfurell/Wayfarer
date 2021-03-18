@@ -3,8 +3,83 @@
 {% load static %}
 {% block content %}
 
-<img width="600" src="" onerror="this.src='{% static '/images/default_city.jpg' %}';">
+{% comment %} <img width="600" src="" onerror="this.src='{% static '/images/default_city.jpg' %}';">
 <h1>{{ city.name }}</h1>
-<h4>{{ city.country }}</h2>
+<h4>{{ city.country }}</h2> {% endcomment %}
+
+
+
+<div class="grid-container">
+    <div class="my-cities text-center">
+        <div class="my-cities-title ">
+            <h4>My list of Cities</h4>
+        </div>
+        <div class="my-cities-list ">
+            {% comment %} <ul>
+                <li>list city #1</li>
+                <li>list city #2</li>
+            </ul> {% endcomment %}
+            
+                {% for review in my_reviews %}
+                <div class="card text-dark bg-light mb-3" >
+                    <div class="card-body">
+                        <h5 class="card-title">{{ review.city }}</h5>
+                {% comment %} <p class="card-text"></p> {% endcomment %}
+                    <a href="{% url 'show_review' review.id %}" class="btn btn-sm btn-outline-info">See My Review</a>
+                    </div>
+                </div>
+                {% endfor %}
+            
+
+        </div>
+    </div>
+    <div class="city">
+        <div class="city-name">
+            <h4>{{city.name}}</h4>
+            <h5> {{city.country}}</h5>
+        </div>
+        <div class="city-pic">
+            {% if city.city_pic %}
+                <img class="img-fluid rounded float-end" src="{{ city.city_pic }}" class="rounded" alt="{{city.name}}">
+            {% else %}
+                <img width="600" src="" onerror="this.src='{% static '/images/default_city.jpg' %}';">
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="review">
+        <div class="review-title">
+            <h5> Reviews for {{city.name}}
+        </div>
+        <div class="review-btn">
+            <input type="submit" class="btn btn-success" value="Add Review">
+        </div>
+        <div class="review-list">
+
+
+            {% for cityreview in city_reviews %}
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img class="img-thumbnail" src="{{profile.profile_pic}}" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{cityreview.title}}</h5>
+                            <p class="card-text">{{cityreview.description}}</p>
+                            {% comment %} <p class="card-text"><small class="text-muted">Additional- we can put user link here?</small></p> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+        </div>
+        
+    </div>
+</div>
+
 
 {% endblock %}
