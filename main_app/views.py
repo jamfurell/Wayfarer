@@ -5,7 +5,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 # Add the following import
-from .forms import SignUpForm, EditProfileForm
+from .forms import SignUpForm, EditProfileForm, AddReviewForm
 from .models import Profile, City, Review
 from django.db.models import Q
 
@@ -68,12 +68,12 @@ def show_city(request, city_id):
     city = City.objects.get(id=city_id)
     # print(type(request.user.id), "<=====this is city.user")
     profile = Profile.objects.get(user=request.user)
-    print(profile,"<==== this is the profile")
+    # print(profile,"<==== this is the profile")
     
     my_reviews = profile.review_set.all()
-    # print(my_reviews[1].description,"<==== this is the reviews")
     city_reviews=city.review_set.all()
     # print(type(city_reviews), "<===========this is all the reviews for tht city")
+    # print(my_reviews[0].created_at,"<==== this is the reviews")
     show_city_content={
         'profile': profile,
         'city': city,
@@ -81,6 +81,36 @@ def show_city(request, city_id):
         'city_reviews': city_reviews,
     }
     return render (request, 'city/city_detail.html', show_city_content)
+
+
+
+
+
+
+
+def add_review(request, city_id):
+    profile = Profile.objects.get(user=request.user)
+    city = City.objects.get(id=city_id)
+    form = AddReviewForm(request.POST or None)
+    print(form, "<=========this is the printed form")
+    print(city_id, "<=========this is the city_id")
+    print(profile, "<=========this is the profile")
+    if request.POST and form.is_valid():
+        new_review = form.save(commit=False)
+        new_review.city = city
+        new_review.profile= profile
+        new_review.save()
+
+        return redirect('show_city', city_id= city_id)
+    else:
+        return render(request, 'city/city_detail.html', {"form": form, 'city_id':city_id})
+
+
+
+
+
+
+
 
 def signup(request):
     error_message= ''

@@ -16,3 +16,10 @@ class EditProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['name', 'current_city', 'profile_pic']
+
+class AddReviewForm(forms.ModelForm):
+    title = forms.CharField(max_length=200, required=True)
+    description = forms.CharField(max_length=1000, required=True)
+    class Meta:
+        model = Review
+        fields = ['title', 'description']
