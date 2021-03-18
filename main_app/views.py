@@ -23,6 +23,10 @@ def about_us(request):
 @login_required
 def profile(request):
     profile = Profile.objects.get(user=request.user)
+    profile_user= str(profile.user)
+    print(type(str(profile.user)), " <============this is the profile.user ")
+    print(type(request.user.username), " <============this is the user.username ")
+    print(profile.user == request.user.username)
     # print(profile.current_city, "----------------------------------------------------------------------------------")
     reviews = profile.review_set.all()
     # print(profile.user.date_joined, "<===================")
@@ -32,6 +36,7 @@ def profile(request):
     profile_content={
         'profile': profile,
         'reviews': reviews,
+        'profile_user': profile_user,
     }
     return render(request, 'profile/profile.html', profile_content)
 
@@ -61,7 +66,20 @@ def search_results(request):
 
 def show_city(request, city_id):
     city = City.objects.get(id=city_id)
-    return render (request, 'city/city_detail.html', {'city': city})
+    # print(type(request.user.id), "<=====this is city.user")
+    profile = Profile.objects.get(user=request.user)
+    print(profile,"<==== this is the profile")
+    
+    my_reviews = profile.review_set.all()
+    print(my_reviews[1].description,"<==== this is the reviews")
+    city_reviews=city.review_set.all()
+    print(type(city_reviews), "<===========this is all the reviews for tht city")
+    show_city_content={
+        'city': city,
+        'my_reviews': my_reviews,
+        'city_reviews': city_reviews,
+    }
+    return render (request, 'city/city_detail.html', show_city_content)
 
 def signup(request):
     error_message= ''
