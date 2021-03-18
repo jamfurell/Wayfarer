@@ -5,26 +5,34 @@
 
 <h1>Welcome {{ profile.user.username }}</h1>
 {% comment %} <h4>Username: {{ profile.user.username }}</h4> {% endcomment %}
-<p> Current City {{ profile.current_city }}</p>
-    <p>Date Joined: {{profile.user.date_joined}}
-    {% if profile.set_date %}</p>
+<p> Current City: {{ profile.current_city }}</p>
+    <p>Date Joined: {{profile.user.date_joined}}</p>
+    {% comment %} <p>{{user.username}} This is the user.username </p>
+    <p>{{profile.user}} This is the profile.username</p> {% endcomment %}
+    {% if user.username == profile_user %}
+        <a href="{% url 'edit_profile' %}">Edit Profile</a>
     {% endif %}
-<a href="{% url 'edit_profile' %}">Edit Profile</a>
+
 <br />
 
-<div class="my-post">
-    {% for review in reviews %}
-        <div class="card" style="width: 18rem;">
-            <img src="https://images.cdn2.stockunlimited.net/preview1300/night-view-of-city-with-shooting-stars_1522096.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{ review.title }}</h5>
-                {% comment %} <p class="card-text"></p> {% endcomment %}
-                <a href="{% url 'show_review' review.id %}" class="btn btn-primary">See My Review</a>
-            </div>
-        </div>
+<div class="row text-center">
+     {% for review in reviews %}
+    <div class="col-sm-6">
+        
+           
+                <div class="card" style="width: 18rem;">
+                    <img src="https://images.cdn2.stockunlimited.net/preview1300/night-view-of-city-with-shooting-stars_1522096.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ review.title }}</h5>
+                        {% comment %} <p class="card-text"></p> {% endcomment %}
+                        <a href="{% url 'show_review' review.id %}" class="btn btn-outline-primary">See My Review</a>
+                    </div>
+                </div>
 
-        {% comment %} <p>{{ review.description }} </p> {% endcomment %}
-    {% endfor %}
+                {% comment %} <p>{{ review.description }} </p> {% endcomment %}
+            {% endfor %}
+        
+    </div>
 </div>
 
 {% comment %} {% for city in cities %}
