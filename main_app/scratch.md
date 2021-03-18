@@ -110,3 +110,27 @@
         </ul>
     </div>
     </nav> {% endcomment %}
+    ___________________________________________________
+    >>>>>Accordion for city-detail page > my city list
+               <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        My Cities
+                    </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        {% for review in my_reviews %}
+                            <div class="card text-dark bg-light mb-3" >
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ review.city }}</h5>
+                            {% comment %} <p class="card-text"></p> {% endcomment %}
+                                <a href="{% url 'show_review' review.id %}" class="btn btn-sm btn-outline-info">See My Review</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    </div>
+                </div>
+            </div>

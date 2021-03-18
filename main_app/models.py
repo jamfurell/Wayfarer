@@ -34,6 +34,7 @@ class City(models.Model):
     name= models.CharField(max_length=100)
     country= models.CharField(max_length=100)
     city_pic= models.CharField(max_length=300, null=True)
+    photographer= models.CharField(max_length=100, null=True)
     
     profiles = models.ManyToManyField(Profile, blank=True)
     def __str__(self):
@@ -41,8 +42,8 @@ class City(models.Model):
 
 
 class Review(models.Model):
-    description= models.CharField(max_length=1000)
     title= models.CharField(max_length=200)
+    description= models.CharField(max_length=1000)
 
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
@@ -53,7 +54,14 @@ class Review(models.Model):
         return self.title
     
     class Meta: 
-        ordering = ['created_at']
+        ordering = ['-created_at']
+
+
+
+
+
+
+
 
 
     ## testing manually providing city info
