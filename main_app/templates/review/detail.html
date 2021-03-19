@@ -18,8 +18,43 @@
     </div>
     <div >
         <h5 >{{review.title}}</h5>
-        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p>{{review.description}}</p>
     </div>
+    
+    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Edit Review</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Review</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <form method="POST" action="{% url 'edit_review' review.id%}">
+                        {% csrf_token %}
+                        {% comment %} {{ editreview_form.as_p }} {% endcomment %}
+                            {{ editreview_form.non_field_errors }}
+                            <div class="fieldWrapper">
+                                {{ editreview_form.title.errors }}
+                                <label for="{{ editreview_form.title.id_for_label }}">Title:</label>
+                                {{ editreview_form.title }}
+                            </div>
+                            <div class="fieldWrapper">
+                                {{ editreview_form.description.errors }}
+                                <label for="{{ editreview_form.description.id_for_label }}">Your description:</label>
+                                {{ editreview_form.description }}
+                            </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
 </div>
 {% comment %} <img src="https://s.clipartkey.com/mpngs/s/116-1162692_free-to-use-public-domain-people-clip-art.png">  {% endcomment %}
 
