@@ -56,6 +56,27 @@ def show_review(request, review_id):
     review = Review.objects.get(id=review_id)
     return render(request, 'review/detail.html', {'review': review})
 
+
+@login_required
+def edit_review(request, review_id):
+    review = Review.objects.get(id=review_id)
+    if review.profile == request.user.profile:
+        ## HANDLE IF THEY EDIT A POST THAT THEY DONT OWN
+        if request.method == 'POST':
+
+            form = AddReviewForm(request.POST, instance = review)
+            if form.is_valid():
+                form.save()
+                return redirect('show_review', review_id)
+        else:
+            form = AddReviewForm(instance = review)
+            context = {
+                "review_id": review_id,
+                "form": form,
+            }
+            return render(request, "review/edit_review.html", context)
+        
+
 def search_results(request):
     query = request.GET['q']
     cities = City.objects.filter(
