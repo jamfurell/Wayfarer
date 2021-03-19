@@ -10,6 +10,5 @@ urlpatterns = [
     path('cities/<int:city_id>/', views.show_city, name='show_city'),
     path('cities/<int:city_id>/add_review/', views.add_review, name='add_review'),
     path('review/<int:review_id>/', views.show_review, name='show_review'),
-    
     path('accounts/signup/', views.signup, name='signup'),
 ]

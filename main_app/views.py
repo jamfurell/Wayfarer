@@ -15,7 +15,6 @@ from django.db.models import Q
 # Define the home view 
 def home(request):
     signup_form = SignUpForm()
-
     return render(request, 'home.html', {'signup_form':signup_form})
 
 def about_us(request):
