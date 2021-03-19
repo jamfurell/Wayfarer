@@ -1,3 +1,16 @@
+base.html--- body background img
+  <style>
+        body {
+         
+            background-repeat: no-repeat;
+            {% comment %} background-attachment: fixed; {% endcomment %}
+            background-size: 100%;
+            overflow: hidden;
+        }
+    </style>
+    
+navbar color: rgb(40 11 88)
+profile-citylist img placehodler: https://images.cdn2.stockunlimited.net/preview1300/night-view-of-city-with-shooting-stars_1522096.jpg
 {% comment %} <header class="navbar">
         <div class="nav">
 

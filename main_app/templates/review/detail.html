@@ -17,7 +17,7 @@
         <img src="{{ review.city.city_pic }}" class="rounded" alt="{{review.title}}">
     </div>
     <div >
-        <h5 >{{review.title}}</h5>
+        <a href="{% url 'show_city' review.city.id%}"><h5 >{{review.title}}</h5></a>
         <p>{{review.description}}</p>
     </div>
     
