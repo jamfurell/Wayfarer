@@ -103,9 +103,11 @@
                             <a href="{% url 'show_review' cityreview.id %}" ><h5 class="card-title">{{cityreview.title}}</h5></a>
                             <p class="card-text">{{cityreview.description}}</p>
                             <p class="card-text"><small class="text-muted">Created: {{cityreview.created_at}}</small></p>
-
-
                         </div>
+                        <form method="POST" action="{% url 'delete_review' cityreview.id %}">
+                            {% csrf_token %}
+                            <input type="submit" class="btn btn-danger" value="delete_review">
+                        </form>
                     </div>
                 </div>
             </div>

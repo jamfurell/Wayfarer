@@ -128,7 +128,15 @@ def add_review(request, city_id):
     else:
         return render(request, 'city/city_detail.html', {"form": form, 'city_id':city_id})
 
+@login_required
+def  delete_review (request, review_id):
+    print("THis is the specific review object ====>", Review.objects.get(id=review_id))
+    thereview= Review.objects.get(id=review_id)
+    city_id= thereview.city.id
+    Review.objects.get(id=review_id).delete()
 
+    # city= City.objects.get(id=city_id)
+    return redirect ('show_city', city_id=city_id)
 
 
 
