@@ -1,5 +1,5 @@
-{% extends 'base.html' %}
-{% block content %}
+{% comment %} {% extends 'home.html' %}
+{% block login_form %} {% endcomment %}
 
 <div>
     <form method="post" class="text-center" action="{% url 'login' %}">
@@ -11,4 +11,4 @@
     </form>
 </div>
 
-{% endblock %}
+{% comment %} {% endblock %} {% endcomment %}

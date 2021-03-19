@@ -14,7 +14,8 @@ from django.db.models import Q
 
 # Define the home view 
 def home(request):
-    return render(request, 'home.html')
+    signup_form = SignUpForm()
+    return render(request, 'home.html', {'signup_form':signup_form})
 
 def about_us(request):
     return HttpResponse('<h1>This is About Us!</h1>')
@@ -136,6 +137,7 @@ def add_review(request, city_id):
 def signup(request):
     error_message= ''
     if request.method == 'POST': 
+        print("You are in the POST signup function!")
         ##how we create a user form object that include data from browser
         form = SignUpForm(request.POST)
         if form.is_valid():
@@ -149,6 +151,5 @@ def signup(request):
         else: 
             print(form.errors.as_json())
             error_message = 'Invalid sign up - try again'
-    form= SignUpForm()
-    context= {'form': form, 'error_message': error_message}
-    return render(request, 'registration/signup.html', context)
+    print("You failed getting the signup function--this is the =====>", request, "<=======")
+    return redirect('home')
