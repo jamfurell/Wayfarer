@@ -55,7 +55,8 @@ def edit_profile(request):
 
 def show_review(request, review_id):
     review = Review.objects.get(id=review_id)
-    return render(request, 'review/detail.html', {'review': review})
+    editreview_form= AddReviewForm()
+    return render(request, 'review/detail.html', {'review': review, 'editreview_form':editreview_form})
 
 
 @login_required
