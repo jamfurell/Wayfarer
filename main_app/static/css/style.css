@@ -100,6 +100,30 @@ a:hover {
     height: 6rem;
 } */
 
+
+.profile-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr 1.4fr 1fr 1.4fr 1fr 0.6fr;
+    grid-template-rows: 0.3fr 0.7fr 1fr 1fr 1fr 1.4fr 0.5fr;
+    gap: 20px 0px;
+    grid-template-areas:
+      ". . . . . . . ."
+      ". profile-pic profile-pic profile-name profile-name . . ."
+      ". profile-pic profile-pic profile-info profile-info . . ."
+      ". profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews ."
+      ". profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews ."
+      ". profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews ."
+      ". . . . . . . .";
+  }
+  .profile-pic { grid-area: profile-pic; }
+  .profile-name { grid-area: profile-name; }
+  .profile-info { grid-area: profile-info; }
+  .profile-reviews { grid-area: profile-reviews; }
+  .profile_picture{
+      height: 200px;
+  }
+
+
 /* 
 .nav{
     display: flex;
@@ -247,3 +271,7 @@ a:hover {
     -webkit-animation-name: fadeInLeft; 
     animation-name: fadeInLeft; 
 } 
+
+.review_image {
+    height: 300px;
+}
