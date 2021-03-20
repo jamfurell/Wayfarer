@@ -8,7 +8,7 @@
 <h4>{{ city.country }}</h2> {% endcomment %}
 <div class="container">
 <div class="row">
-    <div class="col-3">
+    <div class="col col-md-3">
         <div class="my-cities text-center">
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item shadow">
@@ -19,23 +19,26 @@
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body my-cities-list">
-                            {% for review in my_reviews %}
-                                <div class="card text-dark bg-light mb-3" >
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ review.city }}</h5>
-                                        <p class="card-text">{{review.title}}</p>
-                                {% comment %} <p class="card-text"></p> {% endcomment %}
-                                    <a href="{% url 'show_review' review.id %}" class="btn btn-sm btn-outline-info">See My Review</a>
+                            {% if my_reviews     %}
+                                {% for review in my_reviews %}
+                                    <div class="card text-dark bg-light mb-3" >
+                                        <div class="card-body">
+                                                <h5 class="card-title">{{ review.city }}</h5>
+                                                <p class="card-text">{{review.title}}</p>
+                                                <a href="{% url 'show_review' review.id %}" class="btn btn-sm btn-outline-info">See My Review</a>
+                                        </div>
                                     </div>
-                                </div>
-                            {% endfor %}
+                                {% endfor %}
+                            {% else %}
+                                <h5 class="card-title">You don't have any reviews (︶︹︺)</h5>
+                            {% endif %}
                         </div>
                         </div>
                     </div>
                 </div>
             </div>
     </div>
-    <div class="col-9">
+    <div class="col-12 col-md-9">
         <div class="grid-container">
             
             <div class="city">
