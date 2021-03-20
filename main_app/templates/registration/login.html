@@ -1,7 +1,7 @@
 {% comment %} {% extends 'home.html' %}
 {% block login_form %} {% endcomment %}
 
-<div>
+{% comment %} <div>
     <form method="post" class="text-center" action="{% url 'login' %}">
         <h1>Log In</h1>
         {% csrf_token %}
@@ -9,6 +9,6 @@
         <input type="submit" class="btn btn-success" value="login">
         <input type="hidden" name="next" value="{{ next }}">
     </form>
-</div>
+</div> {% endcomment %}
 
 {% comment %} {% endblock %} {% endcomment %}

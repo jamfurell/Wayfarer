@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
 # Add the following import
 from .forms import SignUpForm, EditProfileForm, AddReviewForm
 from .models import Profile, City, Review
@@ -16,7 +17,8 @@ from django.db.models import Q
 def home(request):
     cities = City.objects.all()
     signup_form = SignUpForm()
-    return render(request, 'home.html', {'signup_form':signup_form, 'cities':cities})
+    login_form = AuthenticationForm()
+    return render(request, 'home.html', {'signup_form':signup_form, 'login_form':login_form, 'cities':cities})
 
 def about_us(request):
     return HttpResponse('<h1>This is About Us!</h1>')
@@ -163,3 +165,14 @@ def signup(request):
             error_message = 'Invalid sign up - try again'
     print("You failed getting the signup function--this is the =====>", request, "<=======")
     return redirect('home')
+
+def loginView(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('profile', login)
+    else:
+        form = AuthenticationForm()
+    return render(request, 'accounts/login.html', {'form': form})
