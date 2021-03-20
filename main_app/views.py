@@ -15,9 +15,10 @@ from django.db.models import Q
 
 # Define the home view 
 def home(request):
+    cities = City.objects.all()
     signup_form = SignUpForm()
     login_form = AuthenticationForm()
-    return render(request, 'home.html', {'signup_form':signup_form, 'login_form':login_form})
+    return render(request, 'home.html', {'signup_form':signup_form, 'login_form':login_form, 'cities':cities})
 
 def about_us(request):
     return HttpResponse('<h1>This is About Us!</h1>')
