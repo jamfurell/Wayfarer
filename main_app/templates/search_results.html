@@ -2,12 +2,16 @@
 {% block content %}
 
 <h1>Search Results</h1>
-<ul>
-    {% for city in cities %}
-      <li>
-        <a href="{% url 'show_city' city.id %}">{{ city.name }}</a>
-      </li>
-    {% endfor %}
-</ul>
+<div>
+  {% for city in cities %}
+    <div>
+      <a href="{% url 'show_city' city.id %}"><img class="img-fluid rounded float-end review_image" src="{{ city.city_pic }}" class="rounded" alt="{{city.name}}"></a>
+    </div>
+    <div>
+      <a href="{% url 'show_city' city.id %}">{{ city.name }}</a>
+    </div>
+      
+  {% endfor %}
 
+</div>
 {% endblock %}
