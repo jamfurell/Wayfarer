@@ -9,7 +9,9 @@
 .navbar{
     background-color: rgb(144, 94, 226);
 }
-
+.nav-search{
+    display:flex;
+}
 .navbar-brand, .nav-link{
     color: antiquewhite!important;
 }

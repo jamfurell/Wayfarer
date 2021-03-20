@@ -13,5 +13,6 @@ urlpatterns = [
     path('review/<int:review_id>/edit/', views.edit_review, name='edit_review'),
     path('cities/<int:review_id>/delete_review/', views.delete_review, name='delete_review'),
     path('accounts/signup/', views.signup, name='signup'),
-    path('accounts/login/', views.login, name='login'),
+    path('login/', views.login, {'template_name': 'login.html'}, name='login'),
+    # path('accounts/login/', views.login, name='login'),
 ]
