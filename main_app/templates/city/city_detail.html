@@ -98,7 +98,7 @@
                     <div class="card mb-3 hadow-sm rounded">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img class="img-thumbnail" src="{{profile.profile_pic}}" alt="...">
+                                <img class="img-thumbnail" src="{{profile.profile_pic}}" onerror="this.src='{% static '/images/default_city.jpg' %}';">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
