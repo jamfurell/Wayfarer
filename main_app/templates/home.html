@@ -2,7 +2,7 @@
 {% block content %}
 
 {% comment %} Modal for Signup Form {% endcomment %}
-<div class="container">
+<div class="container text-center">
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -11,6 +11,18 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                
+<form method="post" class="text-center" action="/accounts/login/">
+                    <h1>Log In</h1>
+                    <input type="hidden" name="csrfmiddlewaretoken" value="rvZYmjvnwu8xM9kJTLIunkCxkP3szcKAOFV6od8bk5X90GlvT1iovlZw7Jkmf1oy">
+                    <p><label for="id_username">Username:</label> <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username"></p>
+<p><label for="id_password">Password:</label> <input type="password" name="password" autocomplete="current-password" required="" id="id_password"></p>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Log In</button>
+                    </div>
+                </form>
 
                 <form method="POST" action="{% url 'signup' %}">
                     {% csrf_token %}
@@ -26,7 +38,34 @@
         </div>
     </div>
 </div>
+{% comment %} Modal for Login Form {% endcomment %}
+<div class="container text-center">
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
 
+                <form method="post" class="text-center" action="{% url 'login' %}">
+                    <h1>Log In</h1>
+                    {% csrf_token %}
+                    {{ login_form.as_p }}
+                    {% comment %} <input type="submit" class="btn btn-success" value="login">
+                    <input type="hidden" name="next" value="{{ next }}"> {% endcomment %}
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Log In</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
 {% comment %} {% include 'login.html' %} {% endcomment %}
 
 
