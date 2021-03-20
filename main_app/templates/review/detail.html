@@ -13,7 +13,7 @@
 
 <div class="text-center content">
     <div class="city-image">
-         <a href="{% url 'show_city' review.city.id%}"><img src="{{ review.city.city_pic }}" class="rounded review_image" alt="{{review.title}}"></a>
+         <a href="{% url 'show_city' review.city.id%}"><img src="{{ review.city.city_pic }}" class="rounded review_image img-fluid" alt="{{review.title}}"></a>
     </div>
     <div >
         <a href="{% url 'show_city' review.city.id%}"><h5 >{{review.title}}</h5></a>

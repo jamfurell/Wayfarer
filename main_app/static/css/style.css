@@ -24,6 +24,17 @@ a:hover {
     text-align: center;
 } */
 
+@media only screen and (max-width: 575px) {
+    .home-link {
+        position: absolute;
+	    left: -1000px;
+    }
+}
+
+.home-link {
+    display: inline-block;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns:  1fr 1fr 1fr;
@@ -55,7 +66,10 @@ a:hover {
 .city-review-list { grid-area: city-review-list; }
 
 
-
+.review_image {
+    max-height: 500px;
+    /* height: 100px; */
+}
 
 .card{
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
