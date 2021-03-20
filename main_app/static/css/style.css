@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Source Serif Pro', serif;
 }
 .container{
     margin-top: 20px;
@@ -11,6 +11,7 @@
     background-color: rgb(144, 94, 226);
 }
 .nav-search{
+    margin-left:10px;
     display:flex;
 }
 .navbar-brand, .nav-link{
@@ -56,10 +57,14 @@ a:hover {
 
 
 
-.card {
+.card{
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
 }
 
+.profile-card{
+    background: antiquewhite;
+    border: 2px solid rgb(196, 220, 243);
+}
 .card {
     position: relative;
     display: flex;
