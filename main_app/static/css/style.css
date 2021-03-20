@@ -3,9 +3,9 @@
     margin: 0;
     padding: 0;
 }
-.content{
+/* .content{
     margin: 20px auto;
-}
+} */
 .navbar{
     background-color: rgb(144, 94, 226);
 }
@@ -20,85 +20,39 @@ a:hover {
     text-align: center;
 } */
 
-
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1.4fr 1fr 1.4fr 1fr 1.4fr 1fr 0.6fr;
-    grid-template-rows: 0.3fr 0.7fr 1fr 1fr 1fr 1.4fr 0.5fr;
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-rows: 1.6fr 0.1fr 1.3fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
-        ". . . . . . . ."
-        "my-cities my-cities city city city city city ."
-        "my-cities my-cities city city city city city ."
-        "my-cities my-cities review review review review review ."
-        "my-cities my-cities review review review review review ."
-        "my-cities my-cities review review review review review ."
-        ". . . . . . . .";
+        " city city city"
+        " city city city"
+        " city city city"
+        " . . .";
 }
-.my-cities {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 1.8fr;
-    gap: 0px;
-    grid-template-areas:
-        "my-cities-title my-cities-title"
-        "my-cities-list my-cities-list";
-    grid-area: my-cities;
-    border-radius: 10px;
-    border: 2px solid wheat;
-}
-.my-cities-title { 
-    grid-area: my-cities-title;
-    background: #d7dcf6; 
-}
-.my-cities-list { 
-    grid-area: my-cities-list;
-    height: 5rem;
-}
+/* .my-cities { grid-area: my-cities; } */
 .city {
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr 0.3fr;
-    grid-template-rows: 0.4fr 1.6fr;
+    grid-template-columns: 1fr 1.7fr 0.3fr;
+    grid-template-rows: 0.6fr 1.5fr 0.2fr 1.7fr;
     gap: 0px 0px;
     grid-template-areas:
-        "city-name city-pic city-pic city-pic"
-        ". city-pic city-pic city-pic";
+        "city-name city-pic city-pic"
+        ". city-pic city-pic"
+        "city-review-title city-review-title add-review-btn"
+        "city-review-list city-review-list city-review-list";
     grid-area: city;
-    padding-left: 20px;
 }
-.city-name { 
-    grid-area: city-name; 
-}
-.city-pic { 
-    grid-area: city-pic;
-    overflow: hidden;
-}
-/* .city-pic img{
-    height: 180px;
-    object-fit: cover;
-} */
-.review {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr 0.9fr;
-    grid-template-rows: 0.4fr 1.6fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-        "review-title review-title review-btn"
-        "review-list review-list review-list"
-        "review-list review-list review-list"
-        "review-list review-list review-list";
-    grid-area: review;
-    padding-left: 20px;
-}
-.review-title { grid-area: review-title; }
-.review-btn { 
-    grid-area: review-btn;
-    justify-self: end; 
-}
-.review-list { grid-area: review-list; }
-.review-list card{
-    height: 6rem;
-}
+.city-pic { grid-area: city-pic; }
+.city-name { grid-area: city-name; }
+.city-review-title { grid-area: city-review-title; }
+.add-review-btn { grid-area: add-review-btn; }
+.city-review-list { grid-area: city-review-list; }
+
+
+
+
 
 
 .profile-grid-container {
@@ -107,21 +61,21 @@ a:hover {
     grid-template-rows: 0.3fr 0.7fr 1fr 1fr 1fr 1.4fr 0.5fr;
     gap: 20px 0px;
     grid-template-areas:
-      ". . . . . . . ."
-      ". profile-pic profile-pic profile-name profile-name . . ."
-      ". profile-pic profile-pic profile-info profile-info . . ."
-      ". profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews ."
-      ". profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews ."
-      ". profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews ."
-      ". . . . . . . .";
-  }
-  .profile-pic { grid-area: profile-pic; }
-  .profile-name { grid-area: profile-name; }
-  .profile-info { grid-area: profile-info; }
-  .profile-reviews { grid-area: profile-reviews; }
-  .profile_picture{
-      height: 200px;
-  }
+        ". . . . . . . ."
+        ". profile-pic profile-pic profile-name profile-name . . ."
+        ". profile-pic profile-pic profile-info profile-info . . ."
+        ". profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews ."
+        ". profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews ."
+        ". profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews profile-reviews ."
+        ". . . . . . . .";
+}
+.profile-pic { grid-area: profile-pic; }
+.profile-name { grid-area: profile-name; }
+.profile-info { grid-area: profile-info; }
+.profile-reviews { grid-area: profile-reviews; }
+.profile_picture{
+    height: 200px;
+}
 
 
 /* 
