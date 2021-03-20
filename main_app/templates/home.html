@@ -41,15 +41,23 @@
         
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://www.html-code-generator.com/images/slide1.jpg" class="d-block w-100 img-fluid " alt="first">
+                {% comment %} {% for city in cities %} {% endcomment %}
+                    <div class="carousel-item active">
+                        <img src="https://d13k13wj6adfdf.cloudfront.net/urban_areas/albuquerque_web-3079b54e59.jpg" class="d-block w-100 img-fluid " alt="first">
+                    </div>
+                {% comment %} {% endfor %} {% endcomment %}
+                <div class="carousel-item">
+                    <img src="https://d13k13wj6adfdf.cloudfront.net/urban_areas/birmingham_web-76fdd27a1c.jpg" class="d-block w-100 img-fluid" alt="second">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://www.html-code-generator.com/images/slide2.jpg" class="d-block w-100 img-fluid" alt="second">
-                </div>
+                    <img src="https://d13k13wj6adfdf.cloudfront.net/urban_areas/dubai_web-e211678fd9.jpg" class="d-block w-100 img-fluid" alt="third">
+                </div> 
                 <div class="carousel-item">
-                    <img src="https://www.html-code-generator.com/images/slide3.jpg" class="d-block w-100 img-fluid" alt="third">
-                </div>
+                    <img src="https://d13k13wj6adfdf.cloudfront.net/urban_areas/new-york_web-99d9bb0809.jpg" class="d-block w-100 img-fluid" alt="third">
+                </div> 
+                <div class="carousel-item">
+                    <img src="https://d13k13wj6adfdf.cloudfront.net/urban_areas/tokyo_web-7a20b5733f.jpg" class="d-block w-100 img-fluid" alt="third">
+                </div> 
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
