@@ -177,7 +177,7 @@ a:hover {
 .profile_picture{
     height: 200px;
 }
-.review_image {
-    height: 300px;
+.delete-rev-btn {
+    margin-left:15px;
 }
 
