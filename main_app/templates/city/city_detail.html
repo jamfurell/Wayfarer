@@ -75,7 +75,6 @@
                                         <div class="modal-body">
                                         <form method="POST" action="{% url 'add_review' city.id%}">
                                             {% csrf_token %}
-                                                {% comment %} {{ form.as_p }} {% endcomment %}
                                             <div class="mb-3">
                                                 <label class="col-form-label" for="id_title">Title:</label>
                                                 <input class="form-control" type="text" name="title" maxlength="200" required id="id_title">

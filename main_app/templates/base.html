@@ -15,51 +15,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-    <nav class="navbar navbar-expand">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <img src="{% static '/images/WF_brand.svg' %}" width="100" height="60" alt="">
-                <p class="home-link">Wayfarer</p>
-            </a>
-            <div class="d-flex">
-                <div class="collapse navbar-collapse row" id="navbarSupportedContent">
-                    <div class="col-sm">
-                        {% if user.is_authenticated %}
-                            <ul class="navbar-nav me-auto mb-lg-0 justify-content-end">  
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Menu
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="{% url 'about_us' %}"> About Us </a></li>
-                                        <li><a class="dropdown-item" href="/profile"> View Profile</a></li>
-                                        <li><hr class="dropdown-divider"></li>
-                                        <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        {% else %}
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        SignUp/LogIn
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"> Sign Up <a></li>
-                                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo"> Log In</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        {% endif %}
-                    </div>
-                    <div class="col-sm">
-                        <form class="nav-search" action="{% url 'search_results' %}" method="get">
-                            <input class="form-control me-2" type="text" placeholder="Search City" name="q">
-                            <button class="btn btn-sm btn-success " type="submit">Search</button>
-                        </form>
-                    </div>
-=======
     
 
 
@@ -108,7 +63,6 @@
                         <input class="form-control me-2" type="text" placeholder="Search City" name="q">
                         <button class="btn btn-sm btn-success " type="submit">Search</button>
                     </form>
->>>>>>> submain
                 </div>
             </div>
         </div>
