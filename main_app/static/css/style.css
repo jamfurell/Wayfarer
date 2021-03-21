@@ -20,9 +20,6 @@
 a:hover {
     color: black;
 }
-/* .my-post{
-    text-align: center;
-} */
 
 @media only screen and (max-width: 575px) {
     .home-link {
@@ -49,28 +46,63 @@ a:hover {
 
 }
 /* .my-cities { grid-area: my-cities; } */
-.city {
-    display: grid;
-    grid-template-columns: 1fr 1.7fr 0.3fr;
-    grid-template-rows: 0.6fr 1fr 0.2fr 1.7fr;
-    gap: 0px 0px;
-    grid-template-areas:
-        "city-name city-pic city-pic"
-        ". city-pic city-pic"
-        "city-review-title city-review-title add-review-btn"
-        "city-review-list city-review-list city-review-list";
-    grid-area: city;
-}
-.city-pic { grid-area: city-pic; }
-.city-name { grid-area: city-name; }
-.city-review-title { grid-area: city-review-title; }
-.add-review-btn { grid-area: add-review-btn; }
-.city-review-list { grid-area: city-review-list; }
 
+/* MOBILE */
+@media only screen and (max-width: 1000px) {
+    .city {
+        display: grid;
+        grid-template-columns: 1fr 1.7fr 0.3fr;
+        grid-template-rows: 0.05fr 0.1fr 0.2fr 1fr 0.5fr 0.2fr 1.7fr;
+        gap: 10px 0px;
+        grid-template-areas:
+            ". . ."
+            "city-name city-name city-name"
+            "city-pic city-pic city-pic"
+            "city-pic city-pic city-pic"
+            "city-desc city-desc city-desc"
+            "city-review-title city-review-title add-review-btn"
+            "city-review-list city-review-list city-review-list";
+        grid-area: city;
+    }
+    .city-pic { grid-area: city-pic }
+    .city-name { grid-area: city-name; }
+    .city-desc { grid-area: city-desc;
+        display: inline-block;
+    }
+    .city-review-title { grid-area: city-review-title; }
+    .add-review-btn { grid-area: add-review-btn; }
+    .city-review-list { grid-area: city-review-list; }
+}
+/* DESKTOP */
+@media only screen and (min-width: 1000px) {
+    .city {
+        display: grid;
+        grid-template-columns: 1fr 1.7fr 0.3fr;
+        grid-template-rows: 0.2fr 1fr 0.2fr 1.7fr;
+        gap: 8px 8px;
+        grid-template-areas:
+            "city-name city-pic city-pic"
+            "city-desc city-pic city-pic"
+            "city-review-title city-review-title add-review-btn"
+            "city-review-list city-review-list city-review-list";
+        grid-area: city;
+    }
+    .city-pic { grid-area: city-pic; }
+    .city-name { grid-area: city-name; 
+        /* background-color: red; */
+    }
+    .city-desc { grid-area: city-desc;
+        
+    }
+    .city-review-title { grid-area: city-review-title; 
+        /* border-width: 15px; */
+    }
+    .add-review-btn { grid-area: add-review-btn; }
+    .city-review-list { grid-area: city-review-list; }
+}
 
 .review_image {
-    max-height: 500px;
-    /* height: 100px; */
+    max-height: 300px;
 }
 
 .card{
