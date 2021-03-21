@@ -2,7 +2,24 @@
 {% block content %}
 
 <h1>Search Results</h1>
-<div>
+
+<div class="row">
+{% for city in cities %}
+<div class="col-6 col-sm-3 mb-3">
+    <div class="card h-100" style="width: 18rem;" >
+        <a href="{% url 'show_city' city.id %}">
+        <img class="card-img-top rounded review_image" src="{{ city.city_pic }}" alt="{{city.name}}"></a>
+        {% comment %} float-end  {% endcomment %}
+        {% comment %} <img src="{{ review.city.city_pic }}" class="card-img-top h-50" alt="..."> {% endcomment %}
+        <div class="card-body">
+            <a href="{% url 'show_city' city.id %}" ><h5 class="card-title">{{city.name}}</h5></a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+{% comment %} <div>
   {% for city in cities %}
     <div>
       <a href="{% url 'show_city' city.id %}"><img class="img-fluid rounded float-end review_image" src="{{ city.city_pic }}" class="rounded" alt="{{city.name}}"></a>
@@ -11,7 +28,7 @@
       <a href="{% url 'show_city' city.id %}">{{ city.name }}</a>
     </div>
       
-  {% endfor %}
+  {% endfor %} {% endcomment %}
 
 </div>
 {% endblock %}

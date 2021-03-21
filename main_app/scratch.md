@@ -661,6 +661,3 @@ CSS for carousel template and navbar
     animation-name: fadeInLeft; 
 } 
 
-.review_image {
-    height: 300px;
-}

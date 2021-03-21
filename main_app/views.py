@@ -21,7 +21,7 @@ def home(request):
     return render(request, 'home.html', {'signup_form':signup_form, 'login_form':login_form, 'cities':cities})
 
 def about_us(request):
-    return HttpResponse('<h1>This is About Us!</h1>')
+    return render(request, 'aboutus.html')
 
 # [user: username,emailaddress, datejoined]
 @login_required
