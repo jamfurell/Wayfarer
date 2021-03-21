@@ -23,9 +23,7 @@
 a:hover {
     color: black;
 }
-/* .my-post{
-    text-align: center;
-} */
+
 
 @media only screen and (max-width: 575px) {
     .home-link {
@@ -33,7 +31,6 @@ a:hover {
 	    left: -1000px;
     }
 }
-
 .home-link {
     display: inline-block;
 }
