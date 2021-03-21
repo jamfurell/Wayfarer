@@ -88,15 +88,11 @@ a:hover {
         grid-area: city;
     }
     .city-pic { grid-area: city-pic; }
-    .city-name { grid-area: city-name; 
-        /* background-color: red; */
-    }
+    .city-name { grid-area: city-name; }
     .city-desc { grid-area: city-desc;
         
     }
-    .city-review-title { grid-area: city-review-title; 
-        /* border-width: 15px; */
-    }
+    .city-review-title { grid-area: city-review-title; }
     .add-review-btn { grid-area: add-review-btn; }
     .city-review-list { grid-area: city-review-list; }
 }
