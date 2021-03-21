@@ -16,7 +16,7 @@ As a user, I want to be able to edit and delete a review.
 ![wayfarer-orig-wireframe](https://user-images.githubusercontent.com/76925728/111921810-dc6d4780-8a53-11eb-87ce-5a7a323ca649.jpg)
 
 
-### Technologies & Code Snippets
+### Technologies
 * HTML
 * CSS
 * Django
@@ -29,12 +29,9 @@ As a user, I want to be able to edit and delete a review.
 1. Clone this repository.
 2. Ensure you have postgres and django 
 3. Run pip3 install
-4. Create a database in postgres called <wayfarer>
+4. Create a database in postgres called wayfarer
 5. migrate & seed the database (seed file included in the backend). 
 
-
-
-## Code snippets
 
 
 ### Future development/enhancements
