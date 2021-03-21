@@ -6,16 +6,13 @@
 <div class="container">
     <div class="main-body">
         
-
-            <!-- /Breadcrumb -->
-        
             <div class="row gutters-sm">
                 <div class="col-md-4 mb-3">
-                    <div class=".profile-card">
-                        <div class="card-body">
+                    <div class="profile-card">
+                        <div class="profile-card-body">
                             <div class="d-flex flex-column align-items-center text-center">
                                 
-                                <img src="{{profile.profile_pic}}" class="rounded-circle" onerror="this.src='{% static '/images/default_city.jpg' %}';" width="150">
+                                <img src="{{profile.profile_pic}}" class="rounded-circle" onerror="this.src='{% static '/images/default_city.jpg' %}';" width="175" alt="profile-picture">
                                 <div class="mt-3">
                                     <h4>{{profile.user.username}}</h4>                              
                                     <p class="text-muted font-size-sm">Join Date: {{profile.user.date_joined}}</p>
@@ -33,7 +30,7 @@
                         {% for review in reviews %}
                         <div class="col-sm-6 mb-3">
                             <div class="card h-100" style="width: 18rem;" >
-                                <img src="{{ review.city.city_pic }}" class="card-img-top h-50" alt="...">
+                                <img src="{{ review.city.city_pic }}" class="card-img-top h-75" alt="{{review.city.name}}">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ review.title }}</h5>
                                     {% comment %} <p class="card-text"></p> {% endcomment %}
