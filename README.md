@@ -40,6 +40,10 @@ As a user, I want to be able to edit and delete a review.
 ### Future development/enhancements
 Potential future improvements would be to add more styling to add more design and stylign to some pages. We would also work on creating a search feature for all the profiles registered with wayfarer.
 
+### Accomplishments
+We are excited to share that we used the Teleport API to fetch and seed our data with all the city's information like their name, country, picture, and photgrapher name. Designwi we were able to build a responsive design, get the pages to display like our original wireframes, and create an original brand logo.  
+
+
 ## About Us
 We are two Software Engineers from General Assembly's Software Engineering Immersive course.
 
