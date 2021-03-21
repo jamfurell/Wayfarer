@@ -95,10 +95,10 @@
                     </div>
                     <div class="city-review-list border">
                         {% for cityreview in city_reviews %}
-                        <div class="card mb-3 hadow-sm rounded">
+                        <div class="card mb-3 shadow-sm rounded ">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img class="img-thumbnail" src="{{profile.profile_pic}}" onerror="this.src='{% static '/images/default_city.jpg' %}';">
+                                    <img class="img-thumbnail img-fluid" src="{{cityreview.profile.profile_pic}}" onerror="this.src='{% static '/images/default_city.jpg' %}';">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
@@ -108,7 +108,7 @@
                                     </div>
 
                                     <!-- Button trigger modal for DELETE review -->
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                    <button type="button" class="btn btn-danger delete-rev-btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                     Delete Review
                                     </button>
 

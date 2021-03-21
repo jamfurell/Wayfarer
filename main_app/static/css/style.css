@@ -47,7 +47,6 @@ a:hover {
     margin-top: 15px;
 
 }
-/* .my-cities { grid-area: my-cities; } */
 
 /* MOBILE */
 @media only screen and (max-width: 1000px) {
@@ -90,17 +89,11 @@ a:hover {
         grid-area: city;
     }
     .city-pic { grid-area: city-pic; }
-    .city-name { grid-area: city-name; 
-        /* background-color: red; */
-    }
-    .city-desc { grid-area: city-desc;
-        
-    }
-    .city-review-title { grid-area: city-review-title; 
-        /* border-width: 15px; */
-    }
-    .add-review-btn { grid-area: add-review-btn; }
-    .city-review-list { grid-area: city-review-list; }
+    .city-name { grid-area: city-name}
+    .city-desc { grid-area: city-desc}
+    .city-review-title { grid-area: city-review-title}
+    .add-review-btn { grid-area: add-review-btn}
+    .city-review-list { grid-area: city-review-list}
 }
 
 .review_image {
@@ -184,7 +177,7 @@ a:hover {
 .profile_picture{
     height: 200px;
 }
-.review_image {
-    height: 300px;
+.delete-rev-btn {
+    margin-left:15px;
 }
 
