@@ -126,12 +126,12 @@ USE_TZ = True
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = 'main_app/static'
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'main_app/static'),
+# )
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
