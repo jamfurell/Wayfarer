@@ -661,3 +661,15 @@ CSS for carousel template and navbar
     animation-name: fadeInLeft; 
 } 
 
+__________________________________________________________________________
+base.html removed code
+
+    <style>
+        body {
+
+            background-repeat: no-repeat;
+            {% comment %} background-attachment: fixed; {% endcomment %}
+            background-size: 100%;
+            object-fit: contain;
+        }
+    </style>

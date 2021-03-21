@@ -1,25 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{% comment %} <div class="card">
-    <div class="card-body">
-        <h1>{{review.title}}</h1>
-    </div>
-</div>
-<div class="content">
-    {{ review.description }}
-    <img src="">
-</div> {% endcomment %} 
+
 
 <div class="text-center content">
     <div class="city-image">
-         <a href="{% url 'show_city' review.city.id%}"><img src="{{ review.city.city_pic }}" class="rounded review_image img-fluid" alt="{{review.title}}"></a>
+        <a href="{% url 'show_city' review.city.id%}"><img src="{{ review.city.city_pic }}" class="rounded review_image img-fluid" alt="{{review.title}}"></a>
     </div>
     <div >
         <a href="{% url 'show_city' review.city.id%}"><h5 >{{review.title}}</h5></a>
         <p>{{review.description}}</p>
     </div>
-    
+    {% comment %} MODAL FOR EDIT REVIEW  {% endcomment %}
     <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Edit Review</button>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -31,7 +23,6 @@
                     <div class="modal-body">
                     <form method="POST" action="{% url 'edit_review' review.id%}">
                         {% csrf_token %}
-                        {% comment %} {{ editreview_form.as_p }} {% endcomment %}
                             {{ editreview_form.non_field_errors }}
                             <div class="fieldWrapper">
                                 {{ editreview_form.title.errors }}
@@ -43,7 +34,6 @@
                                 <label for="{{ editreview_form.description.id_for_label }}">Your description:</label>
                                 {{ editreview_form.description }}
                             </div>
-
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -52,11 +42,7 @@
                 </div>
             </div>
         </div>
-
-
 </div>
-{% comment %} <img src="https://s.clipartkey.com/mpngs/s/116-1162692_free-to-use-public-domain-people-clip-art.png">  {% endcomment %}
-
 
 
 
