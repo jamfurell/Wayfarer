@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Search Results</h1>
+
+<div class="row text-center">
+{% for city in cities %}
+<div class="col-6 col-sm-3 mb-3">
+    <div class="card h-100" style="width: 18rem;" >
+        <a href="{% url 'show_city' city.id %}">
+        <img class="card-img-top rounded review_image" src="{{ city.city_pic }}" alt="{{city.name}}"></a>
+        <div class="card-body">
+            <a href="{% url 'show_city' city.id %}" ><h5 class="card-title">{{city.name}}</h5></a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form method="POST" action="{% url 'edit_review' review_id %}">
+  {% csrf_token %}
+  
+  <div class="mb-3">
+    <label class="col-form-label" for="id_title">Title:</label>
+    <input class="form-control" type="text" name="title" maxlength="200" required id="id_title">
+  </div>
+  <div class="mb-3">
+    <label class="col-form-label" for="exampleFormControlTextarea1">Description:</label>
+    <textarea class="form-control" type="text" name="description" maxlength="1000" required id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+{% endblock %}

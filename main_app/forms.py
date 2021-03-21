@@ -5,8 +5,6 @@ from django.contrib.auth.models import User
 
 
 class SignUpForm(UserCreationForm):
-    # first_name= forms.TextInput(max_length=100)
-    # last_name= forms.TextInput(max_length=100)
     current_city = forms.CharField(max_length=100)
     class Meta: 
         model = User
@@ -16,3 +14,10 @@ class EditProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['name', 'current_city', 'profile_pic']
+
+class AddReviewForm(forms.ModelForm):
+    title = forms.CharField(max_length=200, required=True)
+    description = forms.CharField(max_length=1000, required=True)
+    class Meta:
+        model = Review
+        fields = ['title', 'description']
