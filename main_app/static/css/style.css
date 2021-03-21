@@ -17,9 +17,16 @@
 .navbar-brand, .nav-link{
     color: antiquewhite!important;
 }
+.three-w{
+    margin-top: 15px;
+}
 a:hover {
     color: black;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> submain
 
 @media only screen and (max-width: 575px) {
     .home-link {
@@ -27,7 +34,6 @@ a:hover {
 	    left: -1000px;
     }
 }
-
 .home-link {
     display: inline-block;
 }
@@ -111,21 +117,23 @@ a:hover {
 
 .profile-card{
     background: antiquewhite;
-    border: 2px solid rgb(196, 220, 243);
+    
 }
-.card {
+.profile-card {
     position: relative;
     display: flex;
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: rgba(235, 245, 252, 0.699);
     background-clip: border-box;
     border: 0 solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+    border-radius: .30rem;
+    border: 2px solid rgb(196, 220, 243);
+    margin-right: 20px;
 }
 
-.card-body {
+.profile-card-body {
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1rem;
